@@ -1,9 +1,9 @@
 def invers(n):
-    '''
+    """
     Returnează inversul unui nr.
     :param n: numărul citit
     :return: inversul nr. citit
-    '''
+    """
     inversul = 0
     while n > 0:
         inversul = inversul * 10 + n % 10
@@ -12,11 +12,11 @@ def invers(n):
 
 
 def is_palindrome(n):
-    '''
+    """
     Verifică dacă un nr citit de la tastatură este palindrom.
     :param n: numărul citit
     :return: true sau false
-    '''
+    """
     if n == invers(n):
         return True
     else:
@@ -24,11 +24,11 @@ def is_palindrome(n):
 
 
 def isPrime(n):
-    '''
+    """
     Verifică dacă un nr. este prim.
     :param n: nr citit
     :return: true sau false
-    '''
+    """
     if n < 2:
         return False
     if n == 2:
@@ -41,28 +41,28 @@ def isPrime(n):
 
 
 def is_superprime(n):
-    '''
+    """
     Verifică dacă un nr este superprim.
     :param n: nr citit
     :return: true sau false
-    '''
+    """
     if n < 2:
         return False
     while n > 0:
         if n < 2:
             return False
-        if isPrime(n) == False:
+        if not isPrime(n):
             return False
         n = n // 10
     return True
 
 
 def get_largest_prime_below(n):
-    '''
-    Găsește cel mai mare nr. prim mai mic decât cel dat
+    """
+     Găsește cel mai mare nr. prim mai mic decât cel dat
     :param n: nr dat
     :return: ultimul numar prim mai mic decat n
-    '''
+    """
     for i in range(n - 1, 1, -1):
         if isPrime(i):
             return i
