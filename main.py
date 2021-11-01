@@ -6,9 +6,10 @@ def invers(n):
     '''
     inversul = 0
     while n > 0:
-        inversul = inversul*10 + n % 10
-        n = n//10
+        inversul = inversul * 10 + n % 10
+        n = n // 10
     return inversul
+
 
 def is_palindrome(n):
     '''
@@ -20,6 +21,7 @@ def is_palindrome(n):
         return True
     else:
         return False
+
 
 def isPrime(n):
     '''
@@ -54,31 +56,36 @@ def is_superprime(n):
         n = n // 10
     return True
 
+
 def get_largest_prime_below(n):
     '''
     Găsește cel mai mare nr. prim mai mic decât cel dat
     :param n: nr dat
     :return: ultimul numar prim mai mic decat n
     '''
-    for i in range(n-1, 1, -1):
-         if isPrime(i):
+    for i in range(n - 1, 1, -1):
+        if isPrime(i):
             return i
     return 2
+
 
 def test_is_palindrom():
     assert is_palindrome(626) == True
     assert is_palindrome(4424) == False
     assert is_palindrome(5) == True
 
+
 def test_is_superprime():
     assert is_superprime(233) is True
     assert is_superprime(237) is False
     assert is_superprime(72) is False
 
+
 def test_get_largest_prime_below():
     assert get_largest_prime_below(6) == 5
     assert get_largest_prime_below(10) == 7
     assert get_largest_prime_below(200) == 199
+
 
 def main():
     while True:
@@ -88,7 +95,7 @@ def main():
         print("x. Inchide programul.")
         optiune = input("Opțiunea: ")
         if optiune == "1":
-            n= int(input("n = "))
+            n = int(input("n = "))
             if is_palindrome(n):
                 print("Numărul dat este palindrom.")
             else:
@@ -103,6 +110,7 @@ def main():
         elif optiune == "x":
             return
         else:
-            print ("Opțiune invalidă! Reîncercați: ")
+            print("Opțiune invalidă! Reîncercați: ")
+
 
 main()
